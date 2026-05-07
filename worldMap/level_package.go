@@ -57,7 +57,7 @@ type packageMetadataOnly struct {
 	Metadata LevelPackageMetadata `json:"metadata"`
 }
 
-var magicBytes = [5]byte{'L', 'E', 'V', 'E','L'}
+var magicBytes = [5]byte{'L', 'E', 'V', 'E', 'L'}
 
 func isBinaryFormat(file *os.File) (bool, error) {
 	header := make([]byte, 5)
@@ -130,7 +130,7 @@ func LoadLevelPackageMetadata(packagePath string) (LevelPackageMetadata, error) 
 		return LevelPackageMetadata{}, fmt.Errorf("invalid package path: %w", err)
 	}
 
-	_ , err = os.Stat(absPath)
+	_, err = os.Stat(absPath)
 	if err != nil {
 		return LevelPackageMetadata{}, fmt.Errorf("package path stat failed: %w", err)
 	}
@@ -185,7 +185,7 @@ func LoadLevelPackage(packagePath string) (*LevelPackage, error) {
 		return nil, fmt.Errorf("invalid package path: %w", err)
 	}
 
-	_ , err = os.Stat(absPath)
+	_, err = os.Stat(absPath)
 	if err != nil {
 		if !errors.Is(err, os.ErrNotExist) {
 			return nil, fmt.Errorf("package path stat failed: %w", err)

@@ -286,12 +286,12 @@ func handlePanelClick(state *editorState, layout layoutMetrics) {
 		if rl.CheckCollisionPointRec(mouse, metadataButtonRect(layout)) {
 			if state.packagePath != "" {
 				state.dialog = levelDialog{
-					mode:               dialogMetadata,
-					metadataName:       state.packageMetadata.Name,
-					metadataAuthor:     state.packageMetadata.Author,
-					metadataDesc:       state.packageMetadata.Description,
-					metadataVersion:    state.packageMetadata.Version,
-					metadataEditField:  metaFieldName,
+					mode:              dialogMetadata,
+					metadataName:      state.packageMetadata.Name,
+					metadataAuthor:    state.packageMetadata.Author,
+					metadataDesc:      state.packageMetadata.Description,
+					metadataVersion:   state.packageMetadata.Version,
+					metadataEditField: metaFieldName,
 				}
 			}
 			return

@@ -13,7 +13,7 @@ import (
 type AssetLayer int
 
 const (
-	SkyboxTile       = -1
+	SkyboxTile                 = -1
 	AssetLayerWalls AssetLayer = iota
 	AssetLayerFloors
 	AssetLayerCeilings
