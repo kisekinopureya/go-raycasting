@@ -34,8 +34,14 @@ jobs:
         run: |
           sudo apt-get update -q
           sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            pkg-config \
             libsdl2-dev \
-            libsdl2-image-dev
+            libsdl2-image-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libtiff-dev \
+            libwebp-dev
 
       - name: Download dependencies
         run: go mod download
